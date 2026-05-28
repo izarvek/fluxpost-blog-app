@@ -79,7 +79,7 @@ lib/
 
 ---
 
-# 🚀 Getting Started
+#  Getting Started 🚀
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ Make sure you have installed:
 
 ---
 
-# ⚙️ Installation
+#  Installation ⚙️
 
 ## Clone Repository
 
@@ -115,7 +115,7 @@ flutter pub get
 
 ---
 
-# 🔥 Firebase Setup
+#  Firebase Setup 🔥
 
 ## Step 1: Create Firebase Project
 
@@ -143,7 +143,7 @@ flutterfire configure
 
 ---
 
-# ▶️ Run Application
+#  Run Application ▶️
 
 ```bash
 flutter run
@@ -159,7 +159,7 @@ flutter run
 
 ---
 
-# 🧪 Testing
+#  Testing 🧪
 
 Run tests using:
 
@@ -169,13 +169,13 @@ flutter test
 
 ---
 
-# 📦 Build APK
+#  Build APK 📦
 
 ```bash
 flutter build apk
 ```
 
-# 📱 Build App Bundle
+#  Build App Bundle 📱
 
 ```bash
 flutter build appbundle
@@ -183,7 +183,7 @@ flutter build appbundle
 
 ---
 
-# 🔐 Environment Variables
+#  Environment Variables 🔐
 
 Create a `.env` file:
 
@@ -196,7 +196,7 @@ MESSAGING_SENDER_ID=your_sender_id
 
 ---
 
-# 📈 Future Improvements
+#  Future Improvements 📈
 
 * AI Blog Recommendations
 * Markdown Editor

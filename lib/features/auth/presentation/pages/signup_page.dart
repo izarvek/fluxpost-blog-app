@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluxpost/core/theme/app_pallete.dart';
+import 'package:fluxpost/features/auth/presentation/pages/login_page.dart';
 import 'package:fluxpost/features/auth/presentation/widgets/auth_field.dart';
 import 'package:fluxpost/features/auth/presentation/widgets/auth_gradient_button.dart';
 
@@ -27,6 +28,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Form(
@@ -35,31 +37,44 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Sign UP.",
+                "Sign Up.",
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 30),
-              AuthField(hintText: 'Email' , controller: emailController,),
+              AuthField(hintText: 'Email', controller: emailController),
               SizedBox(height: 10),
-              AuthField(hintText: 'Name' , controller: nameController,),
+              AuthField(hintText: 'Name', controller: nameController),
               SizedBox(height: 10),
-              AuthField(hintText: 'Password' , controller: passwordController, isObsecureText: true,),
+              AuthField(
+                hintText: 'Password',
+                controller: passwordController,
+                isObsecureText: true,
+              ),
               SizedBox(height: 20),
-              AuthGradientButton(),
+              AuthGradientButton(buttonText: 'Sign Up'),
               SizedBox(height: 20),
-              RichText(
-                text: TextSpan(
-                  text: 'Already have an account? ',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  children: [
-                    TextSpan(
-                      text: 'Sign In',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: AppPallete.gradient2,
-                        fontWeight: FontWeight.bold,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Already have an account? ',
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: [
+                      TextSpan(
+                        text: 'Sign In',
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              color: AppPallete.gradient2,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
