@@ -10,8 +10,11 @@ A modern cross-platform blogging application built using **Flutter** and **Fireb
 
 # Overview 📌 
 
-FluxPost is a scalable and responsive blogging platform designed for mobile-first experiences.
-The application allows users to authenticate securely, publish blogs, upload images, interact with content, and manage their profiles with a smooth and modern UI.
+FluxPost is a modern, scalable, and real-time blogging application designed for seamless content publishing across multiple platforms.
+
+Built using Flutter and powered by Firebase, the application provides a clean user experience with secure authentication, cloud-based storage, responsive UI, and real-time synchronization.
+
+The project follows industry-level architecture and development practices to ensure maintainability, scalability, and performance.
 
 ---
 
