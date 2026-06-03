@@ -2,8 +2,8 @@ import 'package:fluxpost/core/constants/constants.dart';
 import 'package:fluxpost/core/error/exceptions.dart';
 import 'package:fluxpost/core/error/failures.dart';
 import 'package:fluxpost/core/network/connection_checker.dart';
+import 'package:fluxpost/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:fluxpost/core/common/entities/user.dart';
-import 'package:fluxpost/features/auth/data/datasources/auth_remote_data_sources.dart';
 import 'package:fluxpost/features/auth/data/models/user_model.dart';
 import 'package:fluxpost/features/auth/domain/repository/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
@@ -11,7 +11,10 @@ import 'package:fpdart/fpdart.dart';
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
   final ConnectionChecker connectionChecker;
-  const AuthRepositoryImpl(this.remoteDataSource, this.connectionChecker);
+  const AuthRepositoryImpl(
+    this.remoteDataSource,
+    this.connectionChecker,
+  );
 
   @override
   Future<Either<Failure, User>> currentUser() async {
@@ -70,7 +73,9 @@ class AuthRepositoryImpl implements AuthRepository {
     );
   }
 
-  Future<Either<Failure, User>> _getUser(Future<User> Function() fn) async {
+  Future<Either<Failure, User>> _getUser(
+    Future<User> Function() fn,
+  ) async {
     try {
       if (!await (connectionChecker.isConnected)) {
         return left(Failure(Constants.noConnectionErrorMessage));

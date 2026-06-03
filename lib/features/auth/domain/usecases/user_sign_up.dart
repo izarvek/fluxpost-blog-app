@@ -1,6 +1,6 @@
-import 'package:fluxpost/core/common/entities/user.dart';
 import 'package:fluxpost/core/error/failures.dart';
 import 'package:fluxpost/core/usecase/usecase.dart';
+import 'package:fluxpost/core/common/entities/user.dart';
 import 'package:fluxpost/features/auth/domain/repository/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
@@ -22,7 +22,6 @@ class UserSignUpParams {
   final String email;
   final String password;
   final String name;
-
   UserSignUpParams({
     required this.email,
     required this.password,
